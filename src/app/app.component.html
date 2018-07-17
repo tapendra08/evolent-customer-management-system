@@ -1,0 +1,54 @@
+<header>
+	    <div class="header">
+	      	<div class="innerdiv">
+		          	<div class="topleftnav fl">
+			            	<ul>
+				          	<li><i class="fa fa-envelope"></i> admin.cms@evolent.com</li>
+			            	</ul>
+			          </div>
+		    	      <div class="toprightnav">
+				            <ul>
+						        <li><i class="fa fa-phone"></i> 1800-345689-01</li>
+				           </ul>
+		    	      </div>
+	      	</div>
+    	</div>
+	  	<nav>
+				  <div class="navmain">
+				    	<ul>
+						     <li class="logo"><img src="./assets/images/evolent-cms-logo.png"/><li>
+						     <li><a routerLink="/defaultlogin" routerLinkActive="active" class="dormat-main"><i class="fa fa-fw fa-home"></i>Home</a><li>
+						     <li><a routerLink="/listcontact" routerLinkActive="active" class="dormat-main"><i class="fa fa-address-card-o"></i> List contact</a></li>
+    				     	<li><a routerLink="/addcontact" routerLinkActive="active" class="dormat-main"><i class="fa fa-edit"></i> Add contact</a></li>
+						     <li><a routerLink="/editcontact" routerLinkActive="active" class="dormat-main"><i class="fa fa-gear"></i> Edit contact</a></li>
+						     <li><a routerLink="/deletecontact" routerLinkActive="active" class="dormat-main"><i class="fa fa-trash-o"></i> Delete Contact</a></li>
+					    </ul>
+				  </div>
+		  </nav>
+</header>
+<!--header and navigation ends -->
+<router-outlet>
+</router-outlet>
+
+
+<!--footer code start here-->
+<div class="footer">
+<div class="container">
+<div class="row">
+      <div class="cms-footer">
+           <ul>
+						 <li><a routerLink="/defaultlogin" class="dormat-main">Home</a><li> | 
+						 <li><a routerLink="/listcontact" class="dormat-main"> List contact</a></li> | 
+    				 	 <li><a routerLink="/addcontact" class="dormat-main"> Add contact</a></li> | 
+						 <li><a routerLink="/editcontact"  class="dormat-main"> Edit contact</a></li> | 
+						 <li><a routerLink="/deletecontact" class="dormat-main"> Delete Contact</a></li>
+          </ul>
+      </div>
+</div>
+    <div class="row">
+        <div class="cms-footer">
+           &copy; www.cms-evolent.com
+        </div>
+    </div>
+</div>
+</div>

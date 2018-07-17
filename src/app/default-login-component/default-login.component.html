@@ -1,0 +1,72 @@
+<div class="main-body">
+       <div class="container container-height">
+               <div class="row">
+                    <div class="col-lg-4 col-md-4  col-xl-4">
+                        <div class="card">
+                             <form class="form-horizontal" *ngIf="showLoginForm">
+                                <div class="card"><div class="heading"><h4>Login form</h4></div>
+                                <div class="card-body">
+                                    <div class="alert alert-danger" *ngIf="loginFailed"><strong>Sorry ! </strong> Invalid credential.</div>
+                                <div class="form-group">
+                                     <label class="control-label col-sm-8 col-md-8" for="email">Username:</label>
+                                        <div class="col-sm-12 col-md-12">
+                                           <input type="email" class="form-control" id="email" placeholder="Enter Username" #UserName="ngModel" pattern="^[a-zA-Z]+" [(ngModel)]="userName" name="username">
+                                           <span class="validation-error" *ngIf="UserName?.errors?.pattern" >Please enter valid username.</span>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-8" for="pwd">Password:</label>
+                                        <div class="col-sm-12 col-md-12"> 
+                                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" #Password="ngModel" pattern="^[a-zA-Z0-9]+" [(ngModel)]="password" name="password">
+                                            <span class="validation-error" *ngIf="Password?.errors?.pattern" >Please enter valid password.</span>
+                                        </div>
+                                </div>
+                                <div class="form-group"> 
+                                     <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary" (click)="custlogin()">Login</button>
+                                    </div>
+                               </div>
+                                </div>
+                                </div>
+                              </form>
+                              <div class="gutter-space" *ngIf="isLoggedIn">
+                                  <h4><strong>Welcome ! </strong> Tapendra Kumar</h4>
+                                  <p class="validation-error">You will be logged out when you close your browser</p>
+                                </div>
+
+                        </div>
+                     </div>
+              <div class="col-lg-8 col-md-8 col-xl-8">
+                          <div id="demo" class="carousel slide" data-ride="carousel">
+                              <!-- Indicators -->
+                               <ul class="carousel-indicators">
+                                     <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                     <li data-target="#demo" data-slide-to="1"></li>
+                                      <li data-target="#demo" data-slide-to="2"></li>
+                              </ul>
+
+                            <!-- The slideshow -->
+                        <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                    <img src="./assets/images/banner1.jpg" alt="cms-banner1">
+                              </div>
+                               <div class="carousel-item">
+                                     <img src="./assets/images/banner2.jpg" alt="cms-banner2">
+                               </div>
+                               <div class="carousel-item">
+                                      <img src="./assets/images/banner3.jpg" alt="cms-banner3">
+                              </div>
+                       </div>
+
+                        <!-- Left and right controls -->
+                      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                      </a>
+                       <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                      </a>
+                    </div>
+               </div>
+          </div>
+    </div>
+  </div>

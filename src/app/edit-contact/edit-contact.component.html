@@ -1,0 +1,79 @@
+
+<div class="main-body">
+       <div class="container container-height">
+               <div class="row">
+                    <div class="col-lg-5 col-md-5  col-xl-5">
+                        <div class="card" style="min-height:140px">
+                             <div class="heading">
+                                   <h4>Search contacts</h4>
+                             </div>
+                              <br/>
+                              <div class="alert alert-danger gutter-space" *ngIf="noRecordFound"><strong>Oops !</strong> Record not found.</div>
+                              <form class="form-inline" name="formSerach">
+                              <div class="form-group">
+                              <label for="cid" class="mr-sm-5" style="padding-left:5px">Enter id :</label>
+                             <input  id="cid" #cidRef="ngModel" pattern="^[0-9]+" [(ngModel)]="cid" type="text" class="form-control mr-sm-2" required placeholder="Enter id" name="cid" >
+                             <button class="btn btn-success mr-sm-2" type="button" (click)=search()>Search</button> 
+                              </div>
+                              </form>
+                        </div>
+                    </div>
+
+            <div class="col-lg-7 col-md-7  col-xl-7" *ngIf="recordFound">
+            <div class="card">
+                  <div class="heading"><h4>update your contact</h4></div>
+                  <div class="alert alert-success gutter-space" *ngIf="recordUpdated">Your contact has been updated</div>
+                  <form  id="myEditedForm" name="myEditedForm" #myForm="ngForm" class="col-lg-12 col-md-12  col-xl-12">
+                  <div class="form-group">
+                  <label for="fname">First name:</label>
+                  <input  id="fname" #FirstName="ngModel" pattern="^[a-zA-Z]+" [(ngModel)]="firstName" type="text" class="form-control" required placeholder="Enter your first name" name="fisrtname" >
+                  <span class="validation-error" *ngIf="FirstName?.errors?.pattern" >Please enter characters only.</span>
+                  
+                  </div>
+                  
+                  <div class="form-group">
+                     <label >Last name:</label>
+                         <input  pattern="^[a-zA-Z]+" type="text" class="form-control" name="lname" required placeholder="Enter your last name" name="lastname" [(ngModel)]="lastName"  #LastName="ngModel" />
+                         <span class="validation-error" *ngIf="LastName?.errors?.pattern">Please enter characters only.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label >Email:</label>
+                          <input  pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$" maxlength="50" name="email" type="text" class="form-control" required placeholder="Enter your Email address" [(ngModel)]="emailId"  #Email="ngModel"/>
+                          <span class="validation-error" *ngIf="Email?.errors?.pattern">Please enter valid email id.</span>
+                  </div>
+
+                  <div class="form-group">
+                      <label>Mobile no:</label>
+                            <input maxlength="10" pattern="^[0-9]+" name="mobile" type="text" class="form-control" required placeholder="Enter your phone number" [(ngModel)]="mobileNo"  #Mobile="ngModel"/>
+                            <span class="validation-error" *ngIf="Mobile?.errors?.pattern">This field only consider numbers.</span>
+                   </div>
+
+                   <fieldset>
+                      <legend>Status:</legend>
+                      <div class="form-check">
+                          <input [(ngModel)]="status" type="radio" name="status" required value="Active">
+                            <label>Active</label>
+                      </div>
+                        <div class="form-check">      
+                          <input [(ngModel)]="status" type="radio" name="status" required value="Inactive">
+                          <label class="form-check-label">Inactive </label>
+                        </div>
+                   </fieldset>
+                
+
+                   <div class="form-group">
+                        <button class="btn btn-primary gutter-space" [disabled]="!myForm.dirty || FirstName.invalid || LastName.invalid || Email.invalid || Mobile.invalid" (click)="updateMyDetails()">Submit</button>
+                        <button class="btn btn-danger" type="reset">Cancel</button>
+                   </div>
+                  </form>
+                </div>
+                </div>
+
+
+
+            
+
+               </div>
+       </div>
+</div>

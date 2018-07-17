@@ -1,0 +1,42 @@
+
+<div class="main-body">
+       <div class="container container-height">
+               <div class="row">
+                    <div class="col-lg-10 col-md-8  col-xl-12">
+                        <div class="card">
+                             <div class="heading">
+                                   <h4>List of all contacts</h4>
+                             </div>
+                              <br/>
+                               <div *ngIf="emptyList" class="alert alert-danger gutter-space"><strong>Sorry ! </strong>Contact List is Empty. Nothing to display.</div>
+                              <div class="table-responsive-sm table-responsive-md table-responsive-lg" *ngIf="!emptyList">
+                                  <table class="table">
+                                      <thead class="thead-dark">
+                                           <tr>
+                                                <th>Id</th>
+                                                 <th>Firstname</th>
+                                                 <th>Lastname</th>
+                                                 <th>Email</th>
+                                                 <th>Mobile</th>
+                                                 <th>Status</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                           <tr *ngFor="let data of datalist">
+                                                 <td>{{data.id}}</td>
+                                                 <td>{{data.firstName}}</td>
+                                                 <td>{{data.lastName}}</td>
+                                                 <td>{{data.email}}</td>
+                                                 <td>{{data.mobile}}</td>
+                                                 <td>{{data.status}}</td>
+                                          </tr> 
+                                      </tbody>
+                                  </table>
+                             </div>
+
+
+                        </div>
+                     </div>
+               </div>
+       </div>
+</div>

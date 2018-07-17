@@ -1,0 +1,75 @@
+
+<div class="main-body">
+<div class="container container-height">
+      <div class="row">
+            <div class="col-lg-4 col-md-4  col-xl-4">
+            <div class="card">
+                  <div class="heading"><h4>Add contacts</h4></div>
+                   <div class="alert alert-success gutter-space" *ngIf="contactAdded">Your new contact is added</div>
+                  <form  class="col-lg-12 col-md-12  col-xl-12">
+                  <div class="form-group">
+                  <label for="fname">First name:</label>
+                  <input  id="fname" #FirstName="ngModel" pattern="^[a-zA-Z]+" [(ngModel)]="firstName" type="text" class="form-control" required placeholder="Enter your first name" name="fisrtname" >
+                  <span class="validation-error" *ngIf="FirstName?.errors?.pattern" >Please enter characters only.</span>
+                  
+                  </div>
+                  
+                  <div class="form-group">
+                     <label >Last name:</label>
+                         <input  pattern="^[a-zA-Z]+" type="text" class="form-control" name="lname" required placeholder="Enter your last name" name="lastname" [(ngModel)]="lastName"  #LastName="ngModel" />
+                         <span class="validation-error" *ngIf="LastName?.errors?.pattern">Please enter characters only.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label >Email:</label>
+                          <input  pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$" maxlength="50" name="email" type="text" class="form-control" required placeholder="Enter your Email address" [(ngModel)]="emailId"  #Email="ngModel"/>
+                          <span class="validation-error" *ngIf="Email?.errors?.pattern">Please enter valid email id.</span>
+                  </div>
+
+                  <div class="form-group">
+                      <label>Mobile no:</label>
+                            <input maxlength="10" pattern="^[0-9]+" name="mobile" type="text" class="form-control" required placeholder="Enter your phone number" [(ngModel)]="mobileNo"  #Mobile="ngModel"/>
+                            <span class="validation-error" *ngIf="Mobile?.errors?.pattern">This field only consider numbers.</span>
+                   </div>
+
+                   <div class="form-group">
+                        <button class="btn btn-primary gutter-space" [disabled]="FirstName.invalid || LastName.invalid || Email.invalid || Mobile.invalid " (click)="saveDetails()">Submit</button>
+                        <button class="btn btn-danger" type="reset">Cancel</button>
+                   </div>
+                  </form>
+            </div>
+            </div>
+            <div class="col-lg-8 col-md-8  col-xl-8">
+                  <div class="card">
+                  <div class="heading"><h4>Contact List</h4></div>
+                  <br/>
+                  <div *ngIf="emptyList" class="alert alert-danger gutter-space"><strong>Sorry ! </strong>Contact List is Empty. Please add contact details</div>
+                  <div class="table-responsive-sm table-responsive-md table-responsive-lg">
+                                  <table class="table">
+                                      <thead class="thead-dark">
+                                           <tr>
+                                                <th>Id</th>
+                                                 <th>Firstname</th>
+                                                 <th>Lastname</th>
+                                                 <th>Email</th>
+                                                 <th>Mobile</th>
+                                                 <th>Status</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                           <tr *ngFor="let data of datalist">
+                                                 <td>{{data.id}}</td>
+                                                 <td>{{data.firstName}}</td>
+                                                 <td>{{data.lastName}}</td>
+                                                 <td>{{data.email}}</td>
+                                                 <td>{{data.mobile}}</td>
+                                                 <td>{{data.status}}</td>
+                                          </tr> 
+                                      </tbody>
+                                  </table>
+                             </div>
+                  </div>
+            </div>
+      </div>
+</div>
+</div>
