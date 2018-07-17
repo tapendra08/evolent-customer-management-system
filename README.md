@@ -11,10 +11,10 @@ This is a web application to store sample contact information for an organizatio
 
 Technolgies used:
 -------------------------------------------------------------
-Angular 6
-HTML 5
-CSS
-Bootstrap 
+1.) Angular 6
+2.) HTML 5
+3.) CSS
+4.) Bootstrap 
 
 Steps to Run this application
 --------------------------------------------------------------
@@ -32,5 +32,6 @@ http://localhost:4200/
 Note : -This application is not connected to database. It store data in Static variables. so when you close the application your data will be lost.
 
 
+Live Url : -
 
-
+http://http://demo.tccgreen.com
